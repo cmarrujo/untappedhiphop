@@ -65,30 +65,45 @@ class UntappedHipHop {
     const statement = qs('.zin-banner--header_statement');
     let counter = 0;
 
-    const int = setInterval(() => {
-      if (counter >= artists.length) {
-        clearInterval(int);        
-        gsap.to(overlay, {
-          duration: .55, 
-          ease: "circ.out", 
-          height: '100vh',
-          opacity: 1
-        });
-        gsap.to(mission, {
-          duration: 1, 
-          ease: "circ.out", 
-          css:{color:'var(--secondary)'}
-        });
-        // gsap.to(statement, {
-        //   duration: 1, 
-        //   ease: "circ.out", 
-        //   css:{color:'var(--secondary)'}
-        // });
-      } else {
-        stage.style.backgroundImage = `url(${artists[counter].src})`;
-        counter++;
+    gsap.to(overlay, {
+      duration: .40, 
+      ease: "circ.out", 
+      height: '0',
+      delay: 1,
+      onComplete: () => {
+        overlay.setAttribute('data-active', '');
       }
-    }, 100);
+    });
+
+    setTimeout(() => {
+      const int = setInterval(() => {
+        if (counter >= artists.length) {
+          clearInterval(int);
+  
+          gsap.to(overlay, {
+            duration: .30, 
+            ease: "circ.out", 
+            height: '100vh',
+            opacity: 1
+          });
+  
+          // gsap.to(mission, {
+          //   duration: 1, 
+          //   ease: "circ.out", 
+          //   css:{color:'var(--secondary)'}
+          // });
+  
+          // gsap.to(statement, {
+          //   duration: 1, 
+          //   ease: "circ.out", 
+          //   css:{color:'var(--secondary)'}
+          // });
+        } else {
+          stage.style.backgroundImage = `url(${artists[counter].src})`;
+          counter++;
+        }
+      }, 111);
+    }, 750);
   }
 }
 
