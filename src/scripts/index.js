@@ -55,6 +55,17 @@ import { setInterval } from 'timers';
 class UntappedHipHop {
   constructor() {
     this.animateBanner();
+    this.expandNavigation();
+  }
+
+  expandNavigation = () => {
+    const toggleMenu = qs('.zin-navigation--trigger') && qs('.zin-navigation--trigger');
+    const navigation = qs('.zin-navigation--menu') && qs('.zin-navigation--menu');
+
+    toggleMenu.addEventListener('click', (e) => {
+      toggleMenu.hasAttribute('data-active') ? toggleMenu.removeAttribute('data-active') : toggleMenu.setAttribute('data-active', '');
+      navigation.hasAttribute('data-active') ? navigation.removeAttribute('data-active') : navigation.setAttribute('data-active', '');
+    });
   }
 
   animateBanner = () => {

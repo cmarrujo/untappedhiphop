@@ -1,0 +1,80 @@
+.zin {
+  &-navigation {
+    position: relative;
+
+    &--logo {
+      left: 10px;
+      position: absolute;
+      top: 10px;
+      width: 100px;
+      z-index: 100;
+
+      &_img {
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    &--menu {
+      background: var(--tertiary);
+      color: var(--secondary);
+      height: 0;
+      left: 50%;
+      list-style-type: none;
+      margin: 0;
+      opacity: 0;
+      padding: 0;
+      position: fixed;
+      top: 50%;
+      transition: opacity .45s ease-out, height .35s ease-out;
+      transform: translate(-50%, -50%);
+      width: 0;
+      z-index: 99;
+
+      &_item {
+        color: var(--secondary);
+        display: inline-block;
+        font-size: 24px;
+        padding: 5px 0;
+        text-transform: uppercase;
+      }
+
+      &_intro {
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        width: 75%;
+        transform: translate(-50%, -50%);
+      }
+
+      &[data-active] {
+        height: 100vh;
+        width: 100vw;
+        opacity: 1;
+      }
+    }
+
+    &--trigger {
+      color: var(--secondary);
+      font-size: 28px;
+      line-height: 0;
+      position: absolute;
+      transition: all .5s ease-out .10s;
+      transform: rotate(0deg);
+      right: 15px;
+      top: 25px;
+      z-index: 100;
+
+      &[data-active] {
+        color: var(--primary);
+      }
+
+      &:hover {
+        cursor: pointer;
+        transform: rotate(-45deg);
+        transform-origin: center;
+      }
+    }
+  }
+}
