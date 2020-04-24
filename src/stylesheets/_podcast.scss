@@ -1,0 +1,122 @@
+.zin {
+  &-podcast {
+    background: var(--primary);
+    box-sizing: border-box;
+    height: 40vh;
+    padding: 0;
+    position: relative;
+
+    &--featured {
+      // background: var(--primary);
+      color: var(--secondary);
+      display: flex;
+      margin: auto;
+      padding: 50px 50px 0;
+      width: 70vw;
+
+      &_content,
+      &_photo {
+        flex-basis: 50%;
+      }
+
+      &_content {
+        box-sizing: border-box;
+        padding: 50px;
+
+        &.-header {
+          @include MuseoSans700;
+          font-size: 60px;
+          margin: 0;
+          padding: 0;
+        }
+        
+        &.-body {
+          line-height: 1.5;
+          margin: 0;
+          padding: 15px 250px 15px 0;
+        }
+        
+        &.-action {
+          @include MuseoSans700;
+          background: transparent;
+          box-shadow: inset 0 0 0 2px var(--secondary);
+          box-sizing: border-box;
+          color: var(--secondary);
+          display: inline-block;
+          font-size: 14px;
+          letter-spacing: 1px;
+          margin-top: 20px;
+          padding: 20px 45px;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: all .35s ease-out;
+
+          &:hover {
+            background: var(--secondary);
+            cursor: pointer;
+            color: var(--primary);
+          }
+        }
+
+        &.-episodes {
+          padding: 0;
+        }
+
+        &.-featured{
+          @include MuseoSans300;
+          background: transparent;
+          box-sizing: border-box;
+          box-shadow: inset 0 0 0 1px var(--secondary);
+          color: var(--secondary);
+          font-size: 12px;
+          letter-spacing: 1px;
+          margin: 15px 0;
+          padding: 20px 50px;
+          text-transform: uppercase;
+
+          &[data-active] {
+            @include MuseoSans700;
+            background: var(--secondary);
+            color: var(--primary);
+          }
+        }
+      }
+
+      &_photo {
+        position: relative;
+
+        &.-img {
+          height: auto;
+          width: 100%;
+        }
+        
+        &.-arrow {
+          width: 0; 
+          height: 0; 
+          border-top: 15px solid transparent;
+          border-bottom: 15px solid transparent;
+          border-left: 25px solid white;
+          left: 55%;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 12;
+        }
+
+        &.-play {
+          background: var(--tertiary);
+          border-radius: 100%;
+          box-sizing: border-box;
+          height: 100px;
+          left: 50%;
+          opacity: .75;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 100px;
+          z-index: 10;
+        }
+      }
+    }
+  }
+}

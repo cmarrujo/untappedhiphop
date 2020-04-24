@@ -1,0 +1,151 @@
+.zin {
+  &-topics {
+    background: var(--tertiary);
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+
+    &[data-topic='interviews'] {
+      background: url('../images/featured/featured-5.jpg') top center no-repeat;
+      background-size: cover;
+    }
+    
+    &[data-topic='zine'] {
+      background: url('../images/featured/featured-2.jpg') top center no-repeat;
+      background-size: cover;
+    }
+    
+    &[data-topic='events'] {
+      background: url('../images/featured/featured-3.jpg') top center no-repeat;
+      background-size: cover;
+    }
+    
+    &[data-topic='branding'] {
+      background: url('../images/featured/featured-4.jpg') top center no-repeat;
+      background-size: cover;
+    }
+
+    &--list {
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+
+      &_item {
+        box-sizing: border-box;
+        // border: thin solid white;
+        height: 75px;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+
+        @media (min-width: 1440px) {
+          height: 100px;
+        }
+
+        &:hover {
+          cursor: pointer;
+          
+          .zin-topics--list_item {
+            &.-ramp,
+            &.-solid,
+            &.-hook {
+              display: block;
+            }
+            
+            &.-link {
+              @include MuseoSans700Italic;
+            }
+          }
+        }
+
+        &.-link {
+          @include MuseoSans700;
+          color: var(--secondary);
+          display: block;
+          font-size: 48px;
+          left: 50%;
+          line-height: 1.1;
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          text-decoration: none;
+          text-transform: uppercase;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          z-index: 5;
+
+          @media (min-width: 1440px) {
+            font-size: 100px;
+          }
+
+          &:hover {
+            cursor: pointer;
+            color: var(--secondary);
+          }
+        }
+
+        &.-ramp,
+        &.-solid,
+        &.-hook {
+          display: none;
+        }
+ 
+        &.-ramp {
+          background: var(--primary);
+          background: -moz-linear-gradient(left,  var(--primaryAlpha) 0%, var(--primary) 50%, var(--primaryAlpha) 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(left,  var(--primaryAlpha) 0%,var(--primary) 50%,var(--primaryAlpha) 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to right,  var(--primaryAlpha) 0%,var(--primary) 50%,var(--primaryAlpha) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f00', endColorstr='#f00',GradientType=1 ); /* IE6-9 */
+          height: 25%;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 50%;
+          z-index: 3;
+
+          @media (min-width: 1440px) {
+            height: 40%;
+          }
+        }
+
+        &.-hook {
+          @include MuseoSans300;
+          color: var(--secondary);
+          height: 20%;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          text-transform: uppercase;
+          width: 200vw;
+          z-index: 2;
+
+          @media (min-width: 1440px) {
+            height: 30%;
+            font-size: 24px;
+          }
+        }
+        
+        &.-solid {
+          background: var(--primary);
+          height: 20%;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          z-index: 1;
+
+          @media (min-width: 1440px) {
+            height: 40%;
+          }
+        }
+      }
+    }
+  }
+}
