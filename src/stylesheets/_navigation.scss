@@ -3,11 +3,17 @@
     position: relative;
 
     &--logo {
-      left: 30px;
+      left: 10px;
       position: absolute;
-      top: 30px;
-      width: 10%;
+      top: 15px;
+      width: 50%;
       z-index: 1110;
+
+      @media (min-width: 1440px) {
+        left: 30px;
+        top: 30px;
+        width: 10%;
+      }
 
       &_img {
         fill: var(--secondary);
