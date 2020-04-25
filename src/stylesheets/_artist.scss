@@ -1,0 +1,40 @@
+.zin {  
+  &-artist {
+    height: 100vh;
+    // margin-top: 150px;
+    position: relative;
+    width: 100vw;
+
+    &--featured {
+      display: flex;
+      height: 100%;
+      width: 100vw;
+
+      &_half {
+        height: 100%;
+        flex-basis: 50%;
+        width: 50%;
+
+        &.-featured-three {
+          background: url('../images/featured/evans-02.jpg') top center no-repeat;
+          background-size: cover;
+        }
+      }
+      
+      &_quarter {
+        height: 50vh;
+        width: 100%;
+
+        &.-featured-one {
+          background: url('../images/featured/evans-03.jpg') top center no-repeat;
+          background-size: cover;
+        }
+        
+        &.-featured-two {
+          background: url('../images/featured/evans-01.jpg') top center no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+  }
+}
