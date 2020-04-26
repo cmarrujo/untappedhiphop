@@ -63,8 +63,25 @@ class UntappedHipHop {
     const navigation = qs('.zin-navigation--menu') && qs('.zin-navigation--menu');
 
     toggleMenu.addEventListener('click', (e) => {
-      toggleMenu.hasAttribute('data-active') ? toggleMenu.removeAttribute('data-active') : toggleMenu.setAttribute('data-active', '');
-      navigation.hasAttribute('data-active') ? navigation.removeAttribute('data-active') : navigation.setAttribute('data-active', '');
+      if (toggleMenu.hasAttribute('data-active')) {
+        toggleMenu.removeAttribute('data-active');
+      } else {
+        setTimeout(() => {
+          toggleMenu.setAttribute('data-active', '');
+        }, 600);
+      }
+      
+      if (navigation.hasAttribute('data-active')) {
+        setTimeout(() => {
+          navigation.removeAttribute('data-active');
+          navigation.style.display = "none";
+        }, 1000);
+      } else {
+        navigation.style.display = "block";
+        setTimeout(() => {
+          navigation.setAttribute('data-active', '');
+        }, 500);
+      }
     });
   }
 

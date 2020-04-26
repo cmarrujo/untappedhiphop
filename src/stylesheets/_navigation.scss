@@ -9,6 +9,10 @@
       width: 50%;
       z-index: 1110;
 
+      @media (min-width: 768px) {
+        width: 35%;
+      }
+
       @media (min-width: 1440px) {
         left: 30px;
         top: 30px;
@@ -81,17 +85,17 @@
       @media (min-width: 1440px) {
         font-size: 34px;
         right: 45px;
-      top: 45px;
+        top: 45px;
       }
 
       &[data-active] {
         color: var(--primary);
+        transform: rotate(-45deg);
+        transform-origin: center;
       }
 
       &:hover {
         cursor: pointer;
-        transform: rotate(-45deg);
-        transform-origin: center;
       }
     }
   }
