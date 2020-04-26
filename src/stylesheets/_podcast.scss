@@ -15,7 +15,17 @@
       padding: 30px 20px;
       width: 100vw;
 
-      @media (min-width: 1440px) {
+      @media (min-width: 768px) {
+        margin: auto;
+        padding: 50px 50px;
+        width: 100vw;
+      }
+      
+      @media (min-width: 1280px) {
+        flex-direction: row;
+      }
+      
+      @media (min-width: 1920px) {
         flex-direction: row;
         margin: auto;
         padding: 50px 50px;
@@ -32,6 +42,10 @@
         padding: 0;
 
         @media (min-width: 1440px) {
+          padding: 0 10px;
+        }
+        
+        @media (min-width: 1920px) {
           padding: 50px;
         }
 
@@ -40,6 +54,15 @@
           font-size: 45px;
           margin: 0 0 10px 0;
           padding: 0;
+
+          @media (min-width: 768px) {
+            font-size: 72px;
+            margin: 0 0 20px 0;
+          }
+          
+          @media (min-width: 1280px) {
+            margin: 0 0 10px 0;
+          }
 
           @media (min-width: 1440px) {
             font-size: 60px;
@@ -53,7 +76,27 @@
           margin: 0;
           padding: 0;
 
-          @media (min-width: 1440px) {
+          @media (min-width: 768px) {
+            font-size: 24px;
+            line-height: 1.5;
+          }
+
+          @media (min-width: 1024px) {
+            // font-size: 16px;
+            padding: 0 250px 0 0;
+          }
+          
+          @media (min-width: 1280px) {
+            font-size: 20px;
+            padding: 0 50px 0 0;
+          }
+
+          // @media (min-width: 1440px) {
+          //   font-size: 16px;
+          //   padding: 15px 250px 15px 0;
+          // }
+          
+          @media (min-width: 1920px) {
             font-size: 16px;
             padding: 15px 250px 15px 0;
           }
@@ -85,6 +128,11 @@
           display: flex;
           margin: 10px 0;
           padding: 0;
+          
+          @media (min-width: 768px) {
+            display: block;
+            margin: 30px 0;
+          }
 
           @media (min-width: 1440px) {
             display: block;
@@ -114,10 +162,15 @@
             margin-right: 0;
           }
 
-          @media (min-width: 1440px) {
-            font-size: 12px;
-            margin: 15px 0;
-            padding: 20px 50px;
+          @media (min-width: 768px) {
+            font-size: 14px;
+            padding: 25px 75px;
+          }
+
+          @media (min-width: 1280px) {
+            font-size: 14px;
+            margin: 15px 2px;
+            padding: 25px 40px;
           }
 
           &:hover {
@@ -160,7 +213,7 @@
           transform: translate(-50%, -50%);
           z-index: 12;
 
-          @media (min-width: 1440px) {
+          @media (min-width: 768px) {
             border-top: 15px solid transparent;
             border-bottom: 15px solid transparent;
             border-left: 25px solid white;
@@ -180,7 +233,7 @@
           width: 70px;
           z-index: 10;
 
-          @media (min-width: 1440px) {
+          @media (min-width: 768px) {
             height: 100px;
             width: 100px;
           }

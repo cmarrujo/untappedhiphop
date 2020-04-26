@@ -10,10 +10,25 @@
       z-index: 1110;
 
       @media (min-width: 768px) {
+        left: 15px;
         width: 35%;
+      }
+      
+      @media (min-width: 1024px) {
+        width: 25%;
+      }
+      
+      @media (min-width: 1280px) {
+        width: 20%;
       }
 
       @media (min-width: 1440px) {
+        left: 20px;
+        top: 20px;
+        width: 15%;
+      }
+      
+      @media (min-width: 1920px) {
         left: 30px;
         top: 30px;
         width: 10%;
@@ -81,6 +96,20 @@
       right: 15px;
       top: 25px;
       z-index: 100;
+
+      @media (min-width: 768px) {
+        font-size: 54px;
+        right: 25px;
+        top: 45px;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 50px;
+      }
+      
+      @media (min-width: 1024px) {
+        top: 35px;
+      }
 
       @media (min-width: 1440px) {
         font-size: 34px;
