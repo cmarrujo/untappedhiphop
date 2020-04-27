@@ -121,6 +121,8 @@
         color: var(--secondary);
         font-size: 12px;
         line-height: 1.5;
+        margin-inline-start: 2em;
+        margin-inline-end: 2em;
 
         @media (min-width: 400px) {
           font-size: 14px;
@@ -132,6 +134,10 @@
 
         @media (min-width: 1024px) {
           font-size: 20px;
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 3em;
+          margin-inline-end: 3em;
         }
         
         @media (min-width: 1280px) {
@@ -145,6 +151,10 @@
         
         @media (min-width: 1920px) {
           font-size: 42px;
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 4em;
+          margin-inline-end: 4em;
         }
       }
     }
