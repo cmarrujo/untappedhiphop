@@ -159,7 +159,18 @@
           }
         }
 
+        @keyframes hookAnim {
+          0% {
+            left: 50;
+          }
+          
+          100% {
+            left: 100%;
+          }
+        }
+
         &.-hook {
+          animation: hookAnim 20s infinite ease-out;
           @include MuseoSans300;
           color: var(--secondary);
           height: 20%;
