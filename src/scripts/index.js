@@ -49,6 +49,7 @@
 // new NavigationMenu();
 
 import { qs, qsa, $on, $delegate } from './utils';
+import ScrollMagic from "scrollmagic";
 import '../stylesheets/style.scss';
 import { setInterval } from 'timers';
 
@@ -56,24 +57,39 @@ class UntappedHipHop {
   constructor() {
     this.animateBanner();
     this.expandNavigation();
+    this.lockNavigation();
+  }
+  
+  lockNavigation = () => {
+    let controller = new ScrollMagic.Controller();
+    let myScene = new ScrollMagic.Scene({
+      triggerElement: '.zin-topics',
+      triggerHook: .90,
+      reverse: true
+    })
+    .setClassToggle('.zin-navigation, .zin-navigation--logo, .zin-navigation--menu_overflow', 'data-lock')
+    .addTo(controller);
   }
 
   expandNavigation = () => {
     const toggleMenu = qs('.zin-navigation--trigger') && qs('.zin-navigation--trigger');
     const navigation = qs('.zin-navigation--menu') && qs('.zin-navigation--menu');
+    const navigationItems = qsa('.zin-navigation--menu_item') && qsa('.zin-navigation--menu_item');
 
     toggleMenu.addEventListener('click', (e) => {
       if (toggleMenu.hasAttribute('data-active')) {
-        toggleMenu.removeAttribute('data-active');
+        setTimeout(() => {
+          toggleMenu.removeAttribute('data-active');
+        }, 1000);
       } else {
         setTimeout(() => {
           toggleMenu.setAttribute('data-active', '');
-        }, 600);
+        }, 500);
       }
       
       if (navigation.hasAttribute('data-active')) {
+        navigation.removeAttribute('data-active');
         setTimeout(() => {
-          navigation.removeAttribute('data-active');
           navigation.style.display = "none";
         }, 1000);
       } else {
@@ -82,6 +98,16 @@ class UntappedHipHop {
           navigation.setAttribute('data-active', '');
         }, 500);
       }
+      
+      navigationItems.forEach((item) => {
+        if (item.hasAttribute('data-active')) {
+          item.removeAttribute('data-active');
+        } else {
+          setTimeout(() => {
+            item.setAttribute('data-active', '');
+          }, 500);
+        }
+      });
     });
   }
 
