@@ -74,11 +74,11 @@
         width: 85%;
 
         @media (min-width: 1024px) {
-          width: 70%;
+          width: 75%;
         }
         
         @media (min-width: 1440px) {
-          // width: 65%;
+          width: 77%;
         }
       }
 
@@ -108,7 +108,7 @@
         }
         
         @media (min-width: 1440px) {
-          font-size: 80px;
+          font-size: 90px;
         }
         
         @media (min-width: 1920px) {
@@ -147,6 +147,8 @@
         @media (min-width: 1440px) {
           font-size: 24px;
           line-height: 1.25;
+          margin-inline-start: 3.5em;
+          margin-inline-end: 3.5em;
         }
         
         @media (min-width: 1920px) {

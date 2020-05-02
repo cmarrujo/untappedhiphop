@@ -5,24 +5,59 @@
     position: relative;
     width: 100vw;
 
-    &[data-topic='interviews'] {
-      background: url('../images/featured/featured-5.jpg') top center no-repeat;
-      background-size: cover;
-    }
-    
-    &[data-topic='zine'] {
-      background: url('../images/featured/featured-2.jpg') top center no-repeat;
-      background-size: cover;
-    }
-    
-    &[data-topic='events'] {
-      background: url('../images/featured/featured-3.jpg') top center no-repeat;
-      background-size: cover;
-    }
-    
-    &[data-topic='branding'] {
-      background: url('../images/featured/featured-4.jpg') top center no-repeat;
-      background-size: cover;
+    &--photography {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+
+      &_background {
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+
+        &[data-topic='interviews'] {
+          background: url('../images/featured/featured-5.jpg') top center no-repeat;
+          background-size: cover;
+          display: none;
+
+          &[data-active='true'] {
+            display: block;
+          }
+        }
+        
+        &[data-topic='zine'] {
+          background: url('../images/featured/featured-2.jpg') top center no-repeat;
+          background-size: cover;
+          display: none;
+
+          &[data-active='true'] {
+            display: block;
+          }
+        }
+        
+        &[data-topic='events'] {
+          background: url('../images/featured/featured-3.jpg') top center no-repeat;
+          background-size: cover;
+          display: none;
+
+          &[data-active='true'] {
+            display: block;
+          }
+        }
+        
+        &[data-topic='branding'] {
+          background: url('../images/featured/featured-4.jpg') top center no-repeat;
+          background-size: cover;
+          display: none;
+
+          &[data-active='true'] {
+            display: block;
+          }
+        }
+      }
     }
 
     &--list {
@@ -32,6 +67,7 @@
       top: 50%;
       transform: translate(-50%, -50%);
       width: 100%;
+      z-index: 2;
 
       &_item {
         box-sizing: border-box;
