@@ -2,6 +2,7 @@ import { qs, qsa, $on, $delegate } from './utils';
 import ScrollMagic from "scrollmagic";
 import '../stylesheets/style.scss';
 import { setInterval } from 'timers';
+import data from './podcast.json';
 
 class UntappedHipHop {
   constructor() {
@@ -9,6 +10,8 @@ class UntappedHipHop {
     this.expandNavigation();
     this.lockNavigation();
     this.swapTopics();
+    this.podcastFeatured();
+    console.log(data);
   }
   
   lockNavigation = () => {
@@ -126,6 +129,18 @@ class UntappedHipHop {
               }
             });
           }
+        });
+      });
+    }
+  }
+
+  podcastFeatured = () => {
+    const podcast = qsa('.zin-podcast--featured_content.-featured');
+
+    if(podcast.length) {
+      podcast.forEach((pod) => {
+        pod.addEventListener('click', (evt) => {
+          console.log(evt.target);
         });
       });
     }
