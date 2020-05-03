@@ -6,6 +6,18 @@
     padding: 0;
     position: relative;
 
+    &--video {
+      background: red;
+      // display: none;
+      height: 90%;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      z-index: 99;
+    }
+
     &--featured {
       // background: var(--primary);
       color: var(--secondary);
@@ -80,6 +92,7 @@
           font-size: 14px;
           margin: 0;
           padding: 0;
+          transition: all .25s ease-out;
 
           @media (min-width: 768px) {
             font-size: 24px;
@@ -99,6 +112,7 @@
 
           @media (min-width: 1440px) {
             // font-size: 16px;
+            min-height: 120px;
             padding: 10px 150px 10px 0;
           }
           
@@ -162,6 +176,7 @@
           font-size: 10px;
           letter-spacing: 1px;
           margin: 15px 3px;
+          outline: 0;
           padding: 15px 0;
           text-transform: uppercase;
           transition: all .25s ease-out;
@@ -192,12 +207,11 @@
           }
 
           &:hover {
-            @include MuseoSans700;
             background: var(--accent);
             cursor: pointer;
           }
 
-          &[data-active] {
+          &[data-active='true'] {
             @include MuseoSans700;
             background: var(--accent);
             color: var(--secondary);

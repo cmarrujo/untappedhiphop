@@ -124,8 +124,11 @@
           }
 
           @media (min-width: 1440px) {
+            border: thin solid white;
+            display: inline-block;
             line-height: 1.05;
             font-size: 100px;
+            width: auto;
           }
 
           &:hover {
@@ -170,7 +173,6 @@
         }
 
         &.-hook {
-          animation: hookAnim 20s infinite ease-out;
           @include MuseoSans300;
           color: var(--secondary);
           height: 20%;
@@ -185,6 +187,10 @@
           @media (min-width: 1440px) {
             height: 30%;
             font-size: 24px;
+          }
+
+          &[data-active] {
+            animation: hookAnim 20s infinite ease-out;
           }
         }
         

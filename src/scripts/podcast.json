@@ -3,9 +3,19 @@
     "topic": [
       {
         "title": "Knowledge of Self",
-        "detail": "Untapped Hip Hop Presents: Knowledge of Self “KoS” &amp; Insert topic here podcast, 2 shows where we shoot the shit with all of the talented artists we’ve met.",
-        "image": "../src/images/podcast/podcast-scene-one.jpg",
-        "url": "https://www.google.com"
+        "details": "Untapped Hip Hop Presents: Knowledge of Self “KoS” &amp; Insert topic here podcast, 2 shows where we shoot the shit with all of the talented artists we’ve met.",
+        "poster": "../src/images/podcast/podcast-scene-one.jpg",
+        "url": "https://www.youtube-nocookie.com/embed/1RaRma8J9-w"
+      }
+    ]
+  },
+  {
+    "topic": [
+      {
+        "title": "Insert topic here",
+        "details": "Insert topic here podcast, 2 shows where we shoot the shit with all of the talented artists we’ve met.",
+        "poster": "../src/images/podcast/podcast-scene-two.jpg",
+        "url": "https://www.esri.com"
       }
     ]
   }

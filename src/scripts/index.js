@@ -10,8 +10,7 @@ class UntappedHipHop {
     this.expandNavigation();
     this.lockNavigation();
     this.swapTopics();
-    this.podcastFeatured();
-    console.log(data);
+    this.podcastFeatured(data);
   }
   
   lockNavigation = () => {
@@ -120,6 +119,7 @@ class UntappedHipHop {
 
     if(topics.length) {
       topics.forEach((topic) => {
+        console.log(topic);
         topic.addEventListener('mouseenter', (evt) => {
           if(topicsPhotography.length) {
             topicsPhotography.forEach((photo) => {
@@ -134,13 +134,36 @@ class UntappedHipHop {
     }
   }
 
-  podcastFeatured = () => {
+  podcastFeatured = (data) => {
     const podcast = qsa('.zin-podcast--featured_content.-featured');
+    const podcastBody = qs('.zin-podcast--featured_content.-body');
+    const podcastPoster = qs('.zin-podcast--featured_photo.-img');
+    const podcastButtons = qsa('.zin-podcast--featured_content.-featured');
+    const podcastData = data;
+    const active = false;
+
+    if(podcastData.length) {
+      // console.log(podcastData[0].topic[0].poster);
+      // podcastBody.innerHTML = podcastData[pID].topic[0].details;
+      // podcastData.forEach((data, index) => {
+      //   console.log(podcastData[0]);
+      //   data.topic.forEach((topic) => {
+      //     console.log(topic.title);
+      //   })
+      // });
+    }
 
     if(podcast.length) {
       podcast.forEach((pod) => {
         pod.addEventListener('click', (evt) => {
-          console.log(evt.target);
+          podcastButtons.forEach((btn) => {
+            btn.setAttribute('data-active', active);
+          });
+          evt.target.setAttribute('data-active', !active);
+          const pID = evt.target.getAttribute('data-podcast');
+          podcastBody.innerHTML = podcastData[pID].topic[0].details;
+          podcastPoster.src = podcastData[pID].topic[0].poster;
+          console.log(podcastData[pID].topic[0].poster);
         });
       });
     }
