@@ -144,22 +144,22 @@ class UntappedHipHop {
 
   podcastFeatured = (data) => {
     const podcast = qsa('.zin-podcast--featured_content.-featured');
-    const podcastBody = qs('.zin-podcast--featured_content.-body');
-    const podcastPoster = qs('.zin-podcast--featured_photo.-img');
+    const podcastBody = qs('.zin-podcast--featured_content.-body') && qs('.zin-podcast--featured_content.-body');
+    const podcastPoster = qs('.zin-podcast--featured_photo.-img') && qs('.zin-podcast--featured_photo.-img');
+    const podcastVideo = qs('.zin-podcast--video') && qs('.zin-podcast--video');
+    const podcastPlay = qs('.zin-podcast--featured_photo.-play') && qs('.zin-podcast--featured_photo.-play');
+    const podcastPlayExit = qs('.zin-podcast--video_exit') && qs('.zin-podcast--video_exit');
     const podcastButtons = qsa('.zin-podcast--featured_content.-featured');
     const podcastData = data;
     const active = false;
 
-    if(podcastData.length) {
-      // console.log(podcastData[0].topic[0].poster);
-      // podcastBody.innerHTML = podcastData[pID].topic[0].details;
-      // podcastData.forEach((data, index) => {
-      //   console.log(podcastData[0]);
-      //   data.topic.forEach((topic) => {
-      //     console.log(topic.title);
-      //   })
-      // });
-    }
+    podcastPlay.addEventListener('click', (evt) => {
+      podcastVideo.setAttribute('data-active', '');
+    });
+    
+    podcastPlayExit.addEventListener('click', (evt) => {
+      podcastVideo.removeAttribute('data-active');
+    });
 
     if(podcast.length) {
       podcast.forEach((pod) => {
