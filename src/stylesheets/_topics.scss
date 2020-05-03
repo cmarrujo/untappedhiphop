@@ -85,22 +85,6 @@
           height: 100px;
         }
 
-        &:hover {
-          cursor: pointer;
-          
-          .zin-topics--list_item {
-            &.-ramp,
-            &.-solid,
-            &.-hook {
-              display: block;
-            }
-            
-            &.-link {
-              @include MuseoSans700Italic;
-            }
-          }
-        }
-
         &.-link {
           @include MuseoSans700;
           color: var(--secondary);
@@ -124,7 +108,7 @@
           }
 
           @media (min-width: 1440px) {
-            border: thin solid white;
+            // border: thin solid white;
             display: inline-block;
             line-height: 1.05;
             font-size: 100px;
@@ -132,6 +116,7 @@
           }
 
           &:hover {
+            @include MuseoSans700Italic;
             cursor: pointer;
             color: var(--secondary);
           }
@@ -159,6 +144,10 @@
 
           @media (min-width: 1440px) {
             height: 40%;
+          }
+
+          &[data-active] {
+            display: block;
           }
         }
 
@@ -190,10 +179,16 @@
           }
 
           &[data-active] {
+            display: block;
             animation: hookAnim 20s infinite ease-out;
           }
         }
         
+        &.-marquee {
+          // border: thin solid white;
+          margin: 0 10px;
+        }
+
         &.-solid {
           background: var(--primary);
           height: 20%;
@@ -206,6 +201,10 @@
 
           @media (min-width: 1440px) {
             height: 40%;
+          }
+          
+          &[data-active] {
+            display: block;
           }
         }
       }

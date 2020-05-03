@@ -119,16 +119,24 @@ class UntappedHipHop {
 
     if(topics.length) {
       topics.forEach((topic) => {
-        console.log(topic);
         topic.addEventListener('mouseenter', (evt) => {
           if(topicsPhotography.length) {
             topicsPhotography.forEach((photo) => {
               photo.setAttribute('data-active', 'false');
               if(photo.getAttribute('data-topic') === topic.getAttribute('data-topic')) {
                 photo.setAttribute('data-active', 'true');
+                evt.target.parentNode.querySelector('.zin-topics--list_item.-ramp').setAttribute('data-active', '');
+                evt.target.parentNode.querySelector('.zin-topics--list_item.-hook').setAttribute('data-active', '');
+                evt.target.parentNode.querySelector('.zin-topics--list_item.-solid').setAttribute('data-active', '');
               }
             });
           }
+        });
+        
+        topic.addEventListener('mouseleave', (evt) => {
+          evt.target.parentNode.querySelector('.zin-topics--list_item.-ramp').removeAttribute('data-active');
+          evt.target.parentNode.querySelector('.zin-topics--list_item.-hook').removeAttribute('data-active');
+          evt.target.parentNode.querySelector('.zin-topics--list_item.-solid').removeAttribute('data-active');
         });
       });
     }
