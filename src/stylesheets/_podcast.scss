@@ -19,28 +19,40 @@
       width: 100%;
       z-index: 99;
 
-      &_exit {
-        position: absolute;
-        right: 5px;
-        top: 10px;
-        height: 50px;
-        width: 50px;
+      &_frame {
+        position: relative;
+        height: 100%;
+        margin: auto;
+        width: 50%;
 
-        &.-bar {
-          background: var(--secondary);
-          height: 3px;
-          width: 30px;
-
-          &:first-child {
-            transform: rotate(45deg);
-            transform-origin: center;
-          }
-          
-          &:last-child {
-            transform: rotate(-45deg);
-            transform-origin: center;
+        &.-exit {
+          position: absolute;
+          right: -10px;
+          top: -10px;
+          height: 50px;
+          width: 50px;
+  
+          &.-bar {
+            background: var(--secondary);
+            height: 3px;
+            width: 30px;
+  
+            &:first-child {
+              transform: rotate(45deg);
+              transform-origin: center;
+            }
+            
+            &:last-child {
+              transform: rotate(-45deg);
+              transform-origin: center;
+            }
           }
         }
+      }
+      
+      &_player {
+        height: 100%;
+        width: 100%;
       }
 
       &[data-active] {
