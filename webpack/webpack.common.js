@@ -8,7 +8,7 @@ module.exports = {
     app: `./scripts/index.js`,
   },
   output: {
-    filename: `scripts/[name].[hash:10].js`,
+    filename: `scripts/[name].js`,
     path: paths.dist,
   },
   module: {
@@ -55,7 +55,7 @@ module.exports = {
           options: {
             publicPath: '../fonts',
             outputPath: 'fonts',
-            name: '[name].[hash:10].[ext]',
+            name: '[name].[ext]',
           },
         },
       },
@@ -66,7 +66,7 @@ module.exports = {
           options: {
             publicPath: '../images',
             outputPath: 'images',
-            name: '[name].[hash:10].[ext]',
+            name: '[name].[ext]',
           },
         },
       },
@@ -74,7 +74,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'stylesheets/[name].[hash:10].css',
+      filename: 'stylesheets/[name].css',
     }),
     new CopyWebpackPlugin([{ from: paths.static }]),
   ],

@@ -4,7 +4,7 @@
       {
         "title": "Knowledge of Self",
         "details": "Untapped Hip Hop Presents: Knowledge of Self “KoS” &amp; Insert topic here podcast, 2 shows where we shoot the shit with all of the talented artists we’ve met.",
-        "poster": "../src/images/podcast/podcast-scene-one.jpg",
+        "poster": "https://studiosupermassive.com/untapped/images/podcast-scene-one.jpg",
         "url": "https://www.youtube-nocookie.com/embed/qMvG4MQ4G08?controls=0"
       }
     ]
@@ -14,7 +14,7 @@
       {
         "title": "Insert topic here",
         "details": "Insert topic here podcast, 2 shows where we shoot the shit with all of the talented artists we’ve met.",
-        "poster": "../src/images/podcast/podcast-scene-two.jpg",
+        "poster": "https://studiosupermassive.com/untapped/images/podcast-scene-two.jpg",
         "url": "https://www.youtube-nocookie.com/embed/1RaRma8J9-w?controls=0"
       }
     ]

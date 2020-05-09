@@ -1,4 +1,19 @@
-.zin {  
+.zin {
+  &-featured {
+    display: flex;
+    border: thin solid white;
+    height: 50vh;
+    position: relative;
+    width: 50vw;
+    overflow: hidden;
+
+    &--artist {
+      // background: red;
+      height: 100%;
+      width: 50%;
+    }
+  }
+
   &-artist {
     height: 100vh;
     // margin-top: 150px;
@@ -31,7 +46,7 @@
       .zin-artist--featured_artist {
         color: white;
         left: 25px;
-        opacity: 0;
+        opacity: 1;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -51,13 +66,21 @@
         
         &.-label {
           @include FuturaPTHeavy;
-          font-size: 7rem;
+          font-size: 1rem;
           line-height: 1;
+
+          @media (min-width: 1280px) {
+            font-size: 7rem;
+          }
         }
         
         &.-artist {
           @include MuseoSans300;
-          font-size: 48px;
+          font-size: 24px;
+
+          @media (min-width: 1280px) {
+            font-size: 48px;
+          }
         }
       }
 
@@ -129,8 +152,12 @@
             }
 
             .zin-artist--featured_artist {
-              left: 50px;
+              left: 0;
               opacity: 1;
+              
+              @media (min-width: 1280px) {
+                left: 50px;
+              }
             }
           }
         }
@@ -138,6 +165,23 @@
         &.-featured-two {
           background: url('../images/featured/evans-01.jpg') top center no-repeat;
           background-size: cover;
+
+          position: relative;
+          z-index: 1;
+
+          &:hover {
+            cursor: pointer;
+
+            .zin-artist--featured_overlay {
+              height: 100%;
+              opacity: 1;
+            }
+
+            .zin-artist--featured_artist {
+              left: 50px;
+              opacity: 1;
+            }
+          }
         }
       }
     }

@@ -35,16 +35,16 @@
     }
 
     &--logo {
-      left: 12px;
+      left: 11px;
       position: fixed;
       top: 15px;
       transition: all .25s ease-out;
-      width: 40%;
+      width: 25%;
       z-index: 1110;
 
       &.data-lock {
         position: fixed;
-        top: 9px;
+        top: 15px;
 
         @media (min-width: 1280px) {
           width: 150px;
@@ -99,8 +99,10 @@
     }
 
     &--menu {
+      // border: thin solid white;
       box-sizing: border-box;
       display: none;
+      height: 60vh;
       left: 50%;
       margin: 0;
       overflow: hidden;
@@ -212,17 +214,25 @@
       }
 
       &_overflow {
+        display: flex;
+        flex-direction: column;
+        height: 200px;
         position: absolute;
         right: 0;
         top: 0;
-        height: 20px;
-        display: flex;
         transition: all .45s ease-out .5s;
         width: 100%;
 
+        @media (min-width: 1280px) {
+          flex-direction: row;
+          height: 20px;
+        }
+
         &.data-lock {
-          position: absolute;
-          right: -85%;
+          @media (min-width: 1280px) {
+            position: absolute;
+            right: -85%;
+          }
         }
       }
     }
