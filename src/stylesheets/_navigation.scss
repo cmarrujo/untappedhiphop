@@ -1,9 +1,10 @@
 .zin {
   &-navigation {
-    position: relative;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
     z-index: 110;
 
     @media (min-width: 1280px) {
@@ -39,7 +40,7 @@
       position: fixed;
       top: 15px;
       transition: all .25s ease-out;
-      width: 25%;
+      width: 39%;
       z-index: 1110;
 
       &.data-lock {
@@ -319,7 +320,7 @@
         right: 5px;
         position: absolute;
         transition: all .35s ease-out .10s;
-        width: 12px;
+        width: 14px;
         z-index: 100;
 
         &:first-child {
